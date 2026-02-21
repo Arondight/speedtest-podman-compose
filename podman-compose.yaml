@@ -1,0 +1,19 @@
+services:
+  speedtest:
+    container_name: speedtest
+    image: ghcr.io/librespeed/speedtest:latest
+    restart: always
+    environment:
+      MODE: standalone
+      TITLE: "家庭内网测速"
+      TELEMETRY: "false"
+      ENABLE_ID_OBFUSCATION: "false"
+      REDACT_IP_ADDRESSES: "false"
+      #PASSWORD:
+      #EMAIL:
+      DISABLE_IPINFO: "false"
+      #IPINFO_APIKEY: "your api key"
+      DISTANCE: "km"
+      WEBPORT: 8080
+    ports:
+      - "8080:8080"
