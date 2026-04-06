@@ -1,7 +1,13 @@
+networks:
+  speedtest_network:
+    driver: bridge
+
 services:
   speedtest:
     container_name: speedtest
     image: ghcr.io/librespeed/speedtest:latest
+    networks:
+      - speedtest_network
     restart: always
     environment:
       MODE: standalone
